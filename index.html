@@ -3,27 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simon says Game</title>
+    <title>Simon Says Game</title>
     <link rel="stylesheet" href="simon.css">
 </head>
 <body>
-    <h1>Simon  Game</h1>
+    <h1>Simon Game</h1>
     <h2>Press any key to start the game</h2>
 
+    <div id="scoreboard">
+        <p>High Score: <span id="high-score">0</span></p>
+    </div>
+
     <div class="btn-container">
-
-    <div class="line-one">
-    <div class="btn red" type = "button" id="red">1</div>
-    <div class="btn yellow" type = "button" id="yellow">2</div>
-</div>
-
-    <div class="line-two">
-    <div class="btn green" type = "button" id="green">3</div>
-    <div class="btn purple" type = "button" id="purple">4</div>
-</div>
-</div>
-
-
+        <div class="line-one">
+            <div class="btn red" id="red">1</div>
+            <div class="btn yellow" id="yellow">2</div>
+        </div>
+        <div class="line-two">
+            <div class="btn green" id="green">3</div>
+            <div class="btn purple" id="purple">4</div>
+        </div>
+    </div>
 
     <script src="simon.js"></script>
 </body>
