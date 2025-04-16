@@ -1,5 +1,31 @@
 body {
     text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    transition: background-color 0.3s ease;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-top: 20px;
+    color: #333;
+}
+
+.level-up {
+    animation: pop 0.3s ease-in-out;
+}
+
+@keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.btn-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
 }
 
 .btn {
@@ -7,12 +33,12 @@ body {
     width: 200px;
     border-radius: 20%;
     border: 10px solid black;
-    margin: 2.5rem;
+    margin: 1rem;
+    transition: transform 0.1s ease, background-color 0.2s ease;
 }
 
-.btn-container {
-   display: flex;
-   justify-content: center;
+.btn:active {
+    transform: scale(0.95);
 }
 
 .yellow {
@@ -32,9 +58,29 @@ body {
 }
 
 .flash {
-    background-color: white;
+    background-color: white !important;
+    box-shadow: 0 0 20px #fff;
 }
 
 .userflash {
-    background-color: green;
+    box-shadow: 0 0 20px limegreen;
+}
+
+#scoreboard {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Optional: Mobile Responsive Tweaks */
+@media (max-width: 600px) {
+    .btn {
+        width: 130px;
+        height: 130px;
+        margin: 0.8rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
 }
