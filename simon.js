@@ -8,6 +8,7 @@ let level = 0;
 let highScore = 0;
 
 let h2 = document.querySelector("h2");
+let startBtn = document.getElementById("start-btn");
 
 // Sound objects
 let sounds = {
@@ -18,17 +19,29 @@ let sounds = {
     wrong: new Audio("sounds/wrong.mp3")
 };
 
+// Start game with keypress (desktop)
 document.addEventListener("keypress", function () {
     if (!started) {
-        started = true;
-        level = 0;
-        gameSeq = [];
-        h2.innerText = "Get Ready!";
-        setTimeout(() => {
-            levelUp();
-        }, 1000);
+        startGame();
     }
 });
+
+// Start game with button click (mobile/desktop)
+startBtn.addEventListener("click", function () {
+    if (!started) {
+        startGame();
+    }
+});
+
+function startGame() {
+    started = true;
+    level = 0;
+    gameSeq = [];
+    h2.innerText = "Get Ready!";
+    setTimeout(() => {
+        levelUp();
+    }, 1000);
+}
 
 function gameFlash(btn) {
     btn.classList.add("flash");
@@ -86,8 +99,9 @@ function checkAns(idx) {
         }, 150);
 
         if (level > highScore) highScore = level;
+        document.getElementById("high-score").innerText = highScore;
 
-        h2.innerHTML = `Game Over! Score: <b>${level}</b> | High Score: <b>${highScore}</b><br>Press any key to restart.`;
+        h2.innerHTML = `Game Over! Score: <b>${level}</b> | High Score: <b>${highScore}</b><br>Press any key or Start to retry.`;
         reset();
     }
 }
