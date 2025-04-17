@@ -1,29 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simon says Game</title>
-    <link rel="stylesheet" href="simon.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Simon Says Game</title>
+    <link rel="stylesheet" href="simon.css" />
 </head>
 <body>
-    <h1>Simon  Game</h1>
-    <h2>Press any key to start the game</h2>
+    <h1>Simon Game</h1>
+    <h2>Press any key or tap Start to begin</h2>
+
+    <div class="button-group">
+        <button id="start-btn">Start Game</button>
+        <button id="sound-toggle" title="Toggle Sound">🔊</button>
+    </div>
+
+    <div id="scoreboard">
+        <p>High Score: <span id="high-score">0</span></p>
+    </div>
 
     <div class="btn-container">
+        <div class="line-one">
+            <div class="btn red" id="red">1</div>
+            <div class="btn yellow" id="yellow">2</div>
+        </div>
+        <div class="line-two">
+            <div class="btn green" id="green">3</div>
+            <div class="btn purple" id="purple">4</div>
+        </div>
+    </div>
 
-    <div class="line-one">
-    <div class="btn red" type = "button" id="red">1</div>
-    <div class="btn yellow" type = "button" id="yellow">2</div>
-</div>
-
-    <div class="line-two">
-    <div class="btn green" type = "button" id="green">3</div>
-    <div class="btn purple" type = "button" id="purple">4</div>
-</div>
-</div>
-
-
+    <div class="how-to-play">
+        <h3>🧠 How to Play:</h3>
+        <ul>
+            <li><strong>Start:</strong> Click Start Game or press any key.</li>
+            <li><strong>Watch:</strong> The game shows a sequence of colors with sounds.</li>
+            <li><strong>Repeat:</strong> Click the colors in the same order.</li>
+            <li><strong>Level Up:</strong> Each time you get it right, the sequence gets longer.</li>
+            <li><strong>Game Over:</strong> Click wrong? It’s game over!</li>
+        </ul>
+    </div>
 
     <script src="simon.js"></script>
 </body>
